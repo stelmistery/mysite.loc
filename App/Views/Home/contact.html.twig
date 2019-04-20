@@ -1,0 +1,161 @@
+{% extends "base.html.twig" %}
+
+{% block scripts %}
+    <script src="/assets/js/jQuery.js"></script>
+    <script src="/assets/js/jquery.webui-popover.min.js" type="text/javascript"></script>
+{% endblock %}
+
+{% block title %}Contact{% endblock %}
+
+{% block OnloadDiv %}
+    <body onload="navHover(); dropDownMenu();date_time();SaveCookies('contact'); modalWindow()">
+    <div id="wrapper" class="bg-blur">
+{% endblock %}
+
+{% block body %}
+<div id="page">
+    <div id="content_5">
+        <form action="/Validation/FormValidationController/isValidate" method="post" {#onsubmit=" if (validateContactForm()==false){return false;}else{return true}"
+              onchange="activate()"#}>
+            <table id="tableform">
+                <tr>
+                    <td><label for="txt"> <span class="jQtooltip"
+                                                title="Введите имя в формате: Фамилия Имя Отчество">Ваше ФИО:</span></label>
+                    </td>
+                    <td colspan="2">
+                        <input id="txt" name="FIO" type="text" maxlength="50" size="30" {#onblur="checkName()"#}>
+                        <div class="messageBlock" id="up-name">
+                            <p>Введите полное имя!</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ваш пол:</td>
+                    <td>
+                        <input name="sex" type="radio" value="male"> Мужской
+                    </td>
+                    <td>
+                        <input name="sex" type="radio" value="famele">Женский
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Дата рождения:</label></td>
+                    <td colspan="2" style="padding-left:30px">
+                        <input name = "birthday" type="text" id="contactDate" style=" margin-top: 20px">
+                        <div class="calendarTop"
+                             style="background-color: lightgray; width: 270px; margin-left: 0px; ">
+                            <select id="month">
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                            <select id="years">
+                                <option>2014</option>
+                                <option>2015</option>
+                                <option>2016</option>
+                                <option>2017</option>
+                                <option>2018</option>
+                                <option>2019</option>
+                            </select>
+                        </div>
+                        <div class="clearfix" id="calendar"
+                             style="background-color: lightgray; width: 270px; margin-left: 0px;height: 230px;">
+                            <script type="text/javascript">
+                                Calendar();
+                            </script>
+                        </div>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Ваш возраст:</td>
+                    <td>
+                        <select name="age">
+                            <option value="0">1-6</option>
+                            <option value="1">6-12</option>
+                            <option value="2">12-18</option>
+                            <option value="3">18-24</option>
+                            <option value="4">24-30</option>
+                            <option value="5">30+</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="up-e-mail">Ваш Email:</label>
+                    </td>
+                    <td colspan="2">
+                        <input type="text" name="e-mail" size="30" id="e-m" {#onblur="checkE_mail()"#}>
+                        <div class="messageBlock" id="up-e-mail">
+                            <p>Некорректный eail</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phone"><span class="jQtooltip"
+                                                 title="Введите номер в формате: +3XXXXXXXXXX или +7ХХХХХХХХХХ">Телефон</span></label>
+                    </td>
+                    <td>
+                        <input id="phone" type="text" name="phone" {#onblur="checkPhone()"#}>
+                        <div class="messageBlock" id="up-phone">
+                            <p>Введите номер(9-11 цифр) с +3/+7</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="post" type="button" value="Отпавить" {#disabled="true"#} class="contactButton">
+                    </td>
+                    <td><input type="reset"></td>
+                </tr>
+            </table>
+            <div class="expanded">
+                <div>
+                    <div id="modalWindow">
+                        <table>
+                            <tr>
+                                <td colspan="2"><label id="modalLabel">Вы уверены?</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="button" name="no" id="submitNo" value="NO"></td>
+                                <td><input type="submit" name="yes" id="submitYes" value="Yes"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </form>
+            {% if nonVal %}
+            <ul>
+                {% for key,value in nonVal %}
+                <li>{{ value }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if nonValAll %}
+            <ul>
+                <li>{{ nonValAll }}</li>
+            </ul>
+            {% endif %}
+
+            {% if hasVal %}
+            <ul>
+                <li>{{ hasVal }}</li>
+            </ul>
+            {% endif %}
+
+    </div>
+</div>
+
+{% endblock %}

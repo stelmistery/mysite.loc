@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Main{% endblock %}
+
+{% block OnloadDiv %}
+    <body onload="navHover(); dropDownMenu();date_time();SaveCookies('index')" >
+    <div id="wrapper">
+{% endblock %}
+
+{% block body %}
+   <div id="page">
+			<div id="content_1">
+				<div id="post1">
+					<img class="align_left" src="/assets/img/avatar.jpg" alt="avatar" width="384" height="288">
+					<p>Вознесенский Владислав Александрович</p>
+					<p>ИС/б-31-о</p>
+					<p>Лабораторная работа №1</p>
+				</div>
+			</div>
+		</div>
+
+{% endblock %}

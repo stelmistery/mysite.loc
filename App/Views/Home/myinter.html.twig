@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block title  %}Мои интересы{% endblock %}
+
+{% block OnloadDiv %}
+	<body onload="navHover(); dropDownMenu();date_time();SaveCookies('myinter')">
+	<div id="wrapper">
+{% endblock %}
+
+{% block body %}
+		<div id="page">
+			<div id="content_3">
+				<h1>Могу, умею, практикую :D</h1>
+				<script>
+					interestsList("U", "Хобби", "Книги", "Фильмы", "Лорем", "hobby", "books", "cinema", "lorem");
+				</script>
+				<p id="hobby"> В свободное время я предпочитаю играть на гитаре. Учусь играть сам, но планирую найти
+					репетитора для улучшения грамотности игры и осложнения исполнения. Играю на акустической гитаре
+					YAMHA F-310, популярной и недорогой модели. Купил я её в магазине Орфей в городе Севастополь. Я
+					постоянно там закупаюсь музыкальными инструментами и безделушками. В скором будущей планирую купить
+					себе электрогитару. Электрогитара фирмы Fender, легендарной и умелой делать качественные музыкальные
+					инструменты. Хочу приобрести Fender squier bullet stratocaster.</p>
+				<p id="books">Будучи учеником, я всегда через силу читал, заданные домой книги по литературе (ну или не
+					читал их вообще). Однако, как оказалось, я люблю читать, но лишь определённый жанр. В школе я очень
+					любил играть, и я наткнулся на игру "Метро 2033", которую прошёл буквально за одну ночь. Позже я
+					узнал, что игра была создана по мотивам книги "Метро 2033" автора Дмитрия глуховского. Я безумно
+					полюбил вселенную игры "Метро 2033". Это смотивировало меня собрать нужную сумму и заказать все три
+					части книги вселенной метро. Как только книги попали мне в руки, все три части я прочитал на одной
+					дыхании. С тех пор я понял, что люблю читать приключенческую фантастику. Сейчас я читаю цикл книг
+					Стивена Кинга "Тёмная башня".</p>
+				<p id="cinema">Кино для меня не просто видеоряд с картинками, которые меняются со скоростью 24
+					кадра/сек. Я считаю, что кино это искусство. Многие режиссёры стараются своим творением показать
+					скрытый смысл. Захватить зрителя увлекательным сюжетом или трогательным моментом.</p>
+				<p id="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officia commodi inventore
+					assumenda consequuntur debitis ullam, tenetur laboriosam eligendi sequi dolorem optio modi
+					cupiditate quisquam, laborum expedita nesciunt voluptatum sed!Suscipit maxime asperiores, eos ipsa
+					unde laudantium cumque dolorem eius facilis eaque dicta repellendus ipsam at consectetur error,
+					fugit delectus sit! Deserunt suscipit omnis ratione possimus adipisci aut perspiciatis accusamus?
+				</p>
+			</div>
+		</div>
+{% endblock %}

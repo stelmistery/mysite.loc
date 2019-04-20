@@ -1,0 +1,119 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Тест{% endblock %}
+
+{% block OnloadDiv %}
+<body onload="navHover(); dropDownMenu();date_time();SaveCookies('test')">
+<div id="wrapper">
+    {% endblock %}
+
+    {% block body %}
+        <div id="page">
+            <div id="content_6">
+                <form action="/Validation/TestFormValidationController/isValidate" method="post" {#onsubmit="return  validateFio() && validateText() && validateRadio()"#}>
+                    <table id="tableform2">
+                        <tr>
+                            <td>Ваше ФИО:</td>
+                            <td><input id="useFIO" name="FIO" type="text" size="30"></td>
+                        </tr>
+                        <tr>
+                            <td>Группа:</td>
+                            <td>
+                                <select name="group">
+                                    <optgroup label="ИС">
+                                        <option value="is31">ИС/б-31-о</option>
+                                        <option value="is31">ИС/б-32-о</option>
+                                        <option value="is32">ИС/б-33-о</option>
+                                    </optgroup>
+                                    <optgroup label="ИВТ">
+                                        <option value="ivt31">ИВТ/б-31-о</option>
+                                        <option value="ivt32">ИВТ/б-32-о</option>
+                                        <option value="ivt33">ИВТ/б-33-о</option>
+                                    </optgroup>
+                                    <optgroup label="УТС">
+                                        <option value="uts31">УТС/б-31-о</option>
+                                        <option value="uts32">УТС/б-31-о</option>
+                                        <option value="uts33">УТС/б-33-о</option>
+                                    </optgroup>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Тест!!!</td>
+                        </tr>
+                        <tr>
+                            <td>Вопрос 1</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><label for="quest1">Безопасность – это состояние человека, при
+                                    котором:</label></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><textarea name="quest1" id="quest11" cols="50" rows="5"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Вопрос 2</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">В БЖД изучаются:</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="radio" name="quest2" value="a"> A. Опасности техногенного, природного,
+                                антропогенного и социального характера
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="radio" name="quest2" value="b"> B. Социальные явления</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="radio" name="quest2" value="c"> C.Природные явления
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Вопрос 3</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Процедура распознавания и количественная оценка негативных воздействий среды
+                                обитания:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <select name="quest3" id="">
+                                    <option value="A">A. Идентификация опасностей;</option>
+                                    <option value="B">B. Ликвидация опасностей;</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="Отправить"></td>
+                            <td><input type="reset"></td>
+                        </tr>
+                    </table>
+                </form>
+                <fiv>
+                    {% if nonVal %}
+                        <ul>
+                            {% for key,value in nonVal %}
+                                <li>{{ value }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                    {% if nonValAll %}
+                        <ul>
+                            <li>{{ nonValAll }}</li>
+                        </ul>
+                    {% endif %}
+
+                    {% if hasVal %}
+                        <ul>
+                            <li>{{ hasVal }}</li>
+                        </ul>
+                    {% endif %}
+                </fiv>
+            </div>
+        </div>
+    {% endblock %}

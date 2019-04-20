@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Фото{% endblock %}
+
+{% block scripts %}
+    <script src="/assets/js/jQuery.js"></script>
+{% endblock %}
+{% block OnloadDiv %}
+<body onload="navHover(); dropDownMenu();SaveCookies('photo');date_time();expand_photo();close_modal_form();switchPhoto();popOvers()">
+<div class="bg-blur">
+<div id="wrapper">
+{% endblock %}
+
+        {% block body %}
+        <div id="page" class="photo">
+            <div id="photo">
+                {#TODO: Доделать вывод картинок с помощью php или шаблонизатора#}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="expanded">
+    <div class="cross"><img src="images/arrow_down_2 (1).png" alt="close"></div>
+    <div class="bigPhoto"></div>
+    <div id="prev">Пред.</div>
+    <div id="next">След.</div>
+
+{% endblock %}

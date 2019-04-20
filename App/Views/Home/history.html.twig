@@ -1,0 +1,62 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Hystory{% endblock %}
+
+{% block OnloadDiv %}
+    <body onload="navHover(); dropDownMenu();date_time();viewSession();SaveCookies('history')">
+    <div id="wrapper">
+{% endblock %}
+
+{% block body %}
+    <div class="container history">
+        <div class="current_history">
+            <table style="font-size: 23px;color: white; font-weight: 500;">
+                <tr>
+                    <td style="border: 1px solid #B36643;">main</td>
+                    <td style="border: 1px solid #B36643;">about</td>
+                    <td style="border: 1px solid #B36643;">interests</td>
+                    <td style="border: 1px solid #B36643;">study</td>
+                    <td style="border: 1px solid #B36643;">photo</td>
+                    <td style="border: 1px solid #B36643;">contacts</td>
+                    <td style="border: 1px solid #B36643;">test</td>
+                    <td style="border: 1px solid #B36643;">history</td>
+                </tr>
+                <tr>
+                    <td id="mainS" style="border: 1px solid #B36643;"></td>
+                    <td id="aboutS" style="border: 1px solid #B36643;"></td>
+                    <td id="interestsS" style="border: 1px solid #B36643;"></td>
+                    <td id="studyS" style="border: 1px solid #B36643;"></td>
+                    <td id="photoS" style="border: 1px solid #B36643;"></td>
+                    <td id="contactS" style="border: 1px solid #B36643;"></td>
+                    <td id="testS" style="border: 1px solid #B36643;"></td>
+                    <td id="historyS" style="border: 1px solid #B36643;"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="whole_history">
+            <table style="font-size: 23px;color: white; font-weight: 500">
+                <tr>
+                    <td style="border: 1px solid #B36643;">main</td>
+                    <td style="border: 1px solid #B36643;">about</td>
+                    <td style="border: 1px solid #B36643;">interests</td>
+                    <td style="border: 1px solid #B36643;">study</td>
+                    <td style="border: 1px solid #B36643;">photo</td>
+                    <td style="border: 1px solid #B36643;">contacts</td>
+                    <td style="border: 1px solid #B36643;">test</td>
+                    <td style="border: 1px solid #B36643;">history</td>
+                </tr>
+                <tr>
+                    <td id="mainC" style="border: 1px solid #B36643;"></td>
+                    <td id="aboutC" style="border: 1px solid #B36643;"></td>
+                    <td id="interestsC" style="border: 1px solid #B36643;"></td>
+                    <td id="studyC" style="border: 1px solid #B36643;"></td>
+                    <td id="photoC" style="border: 1px solid #B36643;"></td>
+                    <td id="contactC" style="border: 1px solid #B36643;"></td>
+                    <td id="testC" style="border: 1px solid #B36643;"></td>
+                    <td id="historyC" style="border: 1px solid #B36643;"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

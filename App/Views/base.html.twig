@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="/assets/js/mainscript.js"></script>
+    <meta http-equiv="content-type" content="text" charset="UTF-8">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    {% block scripts %}{% endblock %}
+    <title>{% block title %}  {% endblock %}</title>
+
+
+{% block OnloadDiv %}
+<body onload="navHover(); dropDownMenu();date_time();SaveCookies('index')">
+<div id="wrapper">
+    {% endblock %}
+
+    <div id="header">
+        <div id="logo">
+            <h1>ElVladosios</h1>
+            <h2>Top prog corporation</h2>
+            <div class="clock">
+                <p id="digital_watch"></p>
+            </div>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="/home/index/main">Главная</a></li>
+                <li><a href="/home/index/about">Обо мне</a></li>
+                <li><a href="/home/index/myinter">Мои интересы</a></li>
+                <li><a href="/home/index/study">Учёба</a></li>
+                <li><a href="/home/index/photo">Фотоальбом</a></li>
+                <li><a href="/home/index/contact">Контакт</a></li>
+                <li><a href="/home/index/test">Тест</a></li>
+                <li><a href="/home/index/history">История</a></li>
+            </ul>
+            <br class="clearfix">
+        </div>
+    </div>
+
+    {% block body %}
+    {% endblock %}
+
+</div>
+</body>
+
+</html>
